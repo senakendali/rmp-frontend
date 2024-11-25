@@ -4,8 +4,6 @@ import CMSHeader from './components/layouts/CMSHeader.jsx';
 import SidebarMenu from './components/layouts/SidebarMenu.jsx';
 import ContentTable from './pages/contentTable.jsx';
 
-
-
 function App() {
   return (
     <div className="min-h-screen bg-gray-50">
