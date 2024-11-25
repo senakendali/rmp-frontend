@@ -9,7 +9,7 @@ const CMSHeader = () => {
         <div className="flex items-center space-x-4">
           <div className="flex items-center">
             <img
-              src="./public/RMPLogo.png"
+              src="/RMPlogo.png"
               alt="Royal Medica logo"
               className="h-8"
             />
