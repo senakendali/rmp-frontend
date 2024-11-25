@@ -2,6 +2,7 @@
 import React from 'react';
 import CMSHeader from './components/layouts/CMSHeader.jsx';
 import SidebarMenu from './components/layouts/SidebarMenu.jsx';
+import RNDPages from './pages/RNDPages.jsx';
 
 function App() {
   return (
@@ -10,6 +11,9 @@ function App() {
         <CMSHeader />
         <div className="flex mt-4">
           <SidebarMenu />
+          <div className="flex-1 mx-4">
+            <RNDPages/>
+          </div>
         </div>
       </div>
     </div>

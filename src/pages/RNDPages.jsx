@@ -1,7 +1,7 @@
 import React from 'react';
 import { MoreVertical, ChevronLeft, ChevronRight, Filter } from 'lucide-react';
 
-const ContentTable = () => {
+const RNDPages = () => {
   return (
     <div className="p-6 bg-white rounded-lg">
       <h1 className="text-2xl font-semibold text-indigo-900 mb-4">Permintaan Pengembangan Produk</h1>
@@ -122,4 +122,4 @@ const ContentTable = () => {
   );
 };
 
-export default ContentTable;
+export default RNDPages;
