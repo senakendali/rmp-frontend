@@ -8,7 +8,9 @@ const Layout = ({ children }) => {
         <CMSHeader />
         <div className="flex mt-4">
           <SidebarMenu />
-          <div className="flex-1 mx-4">{children}</div>
+          <div className="flex-1 mx-4">
+            <div className="p-6 bg-white rounded-lg ">{children}</div>
+          </div>
         </div>
       </div>
     </div>

@@ -1,79 +1,14 @@
 import React, { useState } from "react";
-import { MoreVertical, ChevronLeft, ChevronRight, Filter } from "lucide-react";
+import { MoreVertical } from "lucide-react";
+import PaginationBtn from "../PaginationBtn";
 
 const PermintaanRnD = () => {
-  const [activeTab, setActiveTab] = useState("permintaan");
-
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage, setItemsPerPage] = useState(10);
   return (
-    <div className="p-6 bg-white rounded-lg">
-      <h1 className="text-2xl font-semibold text-indigo-900 mb-4">
-        Permintaan Pengembangan Produk
-      </h1>
-
-      {/* Tabs */}
-      <div className="border-b border-gray-200 mb-4">
-        <div className="border-b border-gray-200 mb-4">
-          <div className="flex gap-8">
-            <button
-              onClick={() => setActiveTab("permintaan")}
-              className={`pb-2 ${
-                activeTab === "permintaan"
-                  ? "text-blue-600 border-b-2 border-blue-600"
-                  : "text-gray-400"
-              }`}
-            >
-              List Permintaan
-            </button>
-            <button
-              onClick={() => setActiveTab("pengembangan")}
-              className={`pb-2 ${
-                activeTab === "pengembangan"
-                  ? "text-blue-600 border-b-2 border-blue-600"
-                  : "text-gray-400"
-              }`}
-            >
-              Pengembangan
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* Search and Actions */}
-      <div className="flex justify-between mb-6">
-        <div className="relative">
-          <input
-            type="text"
-            placeholder="Search..."
-            className="pl-4 pr-10 py-2 border border-gray-200 rounded-lg w-80"
-          />
-          <svg
-            className="absolute right-3 top-2.5 text-gray-400 w-5 h-5"
-            viewBox="0 0 20 20"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M17.5 17.5L12.5 12.5M14.1667 8.33333C14.1667 11.555 11.555 14.1667 8.33333 14.1667C5.11167 14.1667 2.5 11.555 2.5 8.33333C2.5 5.11167 5.11167 2.5 8.33333 2.5C11.555 2.5 14.1667 5.11167 14.1667 8.33333Z"
-              stroke="currentColor"
-              strokeWidth="1.66667"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </div>
-        <div className="flex gap-3">
-          <button className="px-4 py-2 border border-gray-200 rounded-lg text-gray-700">
-            Export
-          </button>
-          <button className="px-4 py-2 border border-gray-200 rounded-lg text-gray-700 flex items-center gap-2">
-            <Filter size={16} />
-            Filter
-          </button>
-        </div>
-      </div>
-
+    <div>
       {/* Table */}
-      <table className="w-full">
+      <table className="w-full ">
         <thead>
           <tr className="bg-gray-50 rounded-lg">
             <th className="py-3 px-4 text-left text-indigo-900 first:rounded-l-lg last:rounded-r-lg">
@@ -162,36 +97,14 @@ const PermintaanRnD = () => {
           ))}
         </tbody>
       </table>
-
       {/* Pagination */}
-      <div className="flex justify-between items-center mt-4">
-        <div className="flex items-center gap-2">
-          <button className="w-8 h-8 flex items-center justify-center rounded hover:bg-gray-100">
-            <ChevronLeft size={16} className="text-gray-400" />
-          </button>
-          <div className="flex gap-1">
-            <button className="w-8 h-8 flex items-center justify-center rounded bg-indigo-900 text-white">
-              1
-            </button>
-            {[2, 3, 4, 5].map((num) => (
-              <button
-                key={num}
-                className="w-8 h-8 flex items-center justify-center text-gray-500 hover:bg-gray-100 rounded"
-              >
-                {num}
-              </button>
-            ))}
-          </div>
-          <button className="w-8 h-8 flex items-center justify-center rounded hover:bg-gray-100">
-            <ChevronRight size={16} className="text-gray-400" />
-          </button>
-        </div>
-        <div className="relative">
-          <select className="appearance-none border border-gray-200 rounded-lg pl-3 pr-8 py-2 bg-white">
-            <option>10 / Page</option>
-          </select>
-        </div>
-      </div>
+      <PaginationBtn
+        currentPage={currentPage}
+        totalPages={5}
+        onPageChange={(page) => setCurrentPage(page)}
+        itemsPerPage={itemsPerPage}
+        onItemsPerPageChange={(value) => setItemsPerPage(value)}
+      />
     </div>
   );
 };

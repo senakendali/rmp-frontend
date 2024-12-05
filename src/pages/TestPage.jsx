@@ -8,9 +8,12 @@ const Content = () => {
 const TestPage = () => {
   return (
     <LayoutRightSpace content={<Content />}>
-      <div className="w-full p-4 bg-white">
-        <Timeline />
+      <div className="border-b border-gray-200 mb-4">
+        <h1 className="text-2xl font-semibold text-indigo-900 mb-4">
+          Log Test
+        </h1>
       </div>
+      <Timeline />
     </LayoutRightSpace>
   );
 };

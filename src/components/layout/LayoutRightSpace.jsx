@@ -8,8 +8,10 @@ const LayoutRightSpace = ({ children, content }) => {
         <CMSHeader />
         <div className="flex mt-4">
           <SidebarMenu />
-          <div className="flex-1 mx-4">{children}</div>
-          <div className="w-[200px] rounded-lg shadow-sm p-4">{content}</div>
+          <div className="flex-1 mx-4">
+            <div className="p-6 bg-white rounded-lg">{children}</div>
+          </div>
+          <div className="w-[200px] rounded-lg p-4">{content}</div>
         </div>
       </div>
     </div>
